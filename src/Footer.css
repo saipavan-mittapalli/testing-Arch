@@ -12,12 +12,15 @@
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr; /* Uneven grid for better layout */
-  gap: 60px;
+  grid-template-columns: 2fr 1fr 1.5fr; 
+  gap: 40px;
   padding: 0 5%;
 }
 .logo{
     color: #fff;
+}
+.footer-brand{
+  margin-top: 25px;
 }
 .footer-brand p {
   margin-top: 20px;

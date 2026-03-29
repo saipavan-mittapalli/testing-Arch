@@ -8,23 +8,30 @@ const Portfolio = () => {
 
   const portfolioData = {
     '3D Models': [
-      { id: '3d-1', title: 'Basic Bedroom render', video: '/src/assets/3D models/video1.mp4' },
-      { id: '3d-2', title: 'Hall with TV unit', video: '/src/assets/3D models/video2.mp4' },
+      { id: '3d-1', title: 'Basic Bedroom render', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679049/assets/3D%20models/video1_v2otb6.mp4' },
+      { id: '3d-2', title: 'Hall with TV unit', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679035/assets/3D%20models/video2_hh4ext.mp4' },
     ],
     'Commercial Space': [
-      { id: 'comm-1', title: 'Adicto Cafe, Warangal', video: '/src/assets/Commercial Space/video3.mp4' },
-      { id: 'comm-2', title: 'Tirumala Home Foods, Khammam', video: '/src/assets/Commercial Space/video4.mp4' },
+      { id: 'comm-1', title: 'Adicto Cafe, Warangal', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679019/assets/Commercial%20Space/video3_afnvxs.mp4' },
+      { id: 'comm-2', title: 'Tirumala Home Foods, Khammam', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679027/assets/Commercial%20Space/video4_fvs3yo.mp4' },
     ],
     'Residential': [
-      { id: 'res-1', title: 'Modern Villa', video: '/src/assets/Residential/video5.mp4' },
-      { id: 'res-2', title: 'Modern Villa', video: '/src/assets/Residential/video6.mp4' },
-      { id: 'res-3', title: 'Modern Villa', video: '/src/assets/Residential/video7.mp4' },
-      { id: 'res-4', title: 'Modern Villa', video: '/src/assets/Residential/video8.mp4' },
+      { id: 'res-1', title: 'Modern Residence', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774682991/assets/Residential/Residence_aqmdrn.mp4' },
+      { id: 'res-2', title: 'Luxury House', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774682963/assets/Residential/Design_vrdd8i.mp4' },
+      { id: 'res-3', title: 'Kitchen', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774683746/assets/Residential/kitchen_zgmevy.mp4' },
+      { id: 'res-4', title: 'Modern Residence', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679017/assets/Residential/video5_jitoro.mp4' },
+      { id: 'res-5', title: 'Living Room', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679059/assets/Residential/video6_a8ngbs.mp4' },
+      { id: 'res-6', title: 'Modern Bedroom', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679032/assets/Residential/video7_atk3ps.mp4' },
+      { id: 'res-7', title: 'Bedroom', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679019/assets/Residential/video8_b5jgru.mp4' },
+      { id: 'res-8', title: 'Modern Residence', video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679055/assets/Residential/video9_d1uu69.mp4' },
     ],
     '2D Sketches': [
-      { id: 'sk-1', title: 'Muti-purpose Hall', video: 'src/assets/2D sketches/Multi-purpose Hall.mp4' },
-      { id: 'sk-2', title: 'Hotel Blueprint', video: '/src/assets/2D sketches/Hotel1.mp4' },
-      { id: 'sk-3', title: 'Resort 2D Plan', video: '/src/assets/2D sketches/Resort1.mp4' },
+      { id: 'sk-1', title: 'Muti-purpose Hall', 
+        video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679016/assets/2D%20sketches/Multi-purpose_Hall_ejf7e6.mp4' },
+      { id: 'sk-2', title: 'Hotel Blueprint', 
+        video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679016/assets/2D%20sketches/Hotel1_ys86kb.mp4' },
+      { id: 'sk-3', title: 'Resort 2D Plan', 
+        video: 'https://res.cloudinary.com/dcbo6elv9/video/upload/v1774679017/assets/2D%20sketches/Resort1_xv0pzh.mp4' },
     ]
   };
 

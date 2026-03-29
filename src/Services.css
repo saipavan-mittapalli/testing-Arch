@@ -1,97 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
-/* --- Services Section --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Grotesk:wght@300..700&display=swap');
 .services-section {
   padding: 100px 5%;
-  background-color: #ffffff;
+  background-color: #0F0F0F; /* Darker, more premium background */
+  color: #FFFFFF;
 }
 
-.services-header {
+.section-header {
   text-align: center;
   margin-bottom: 60px;
 }
-
-.subtitle {
+.subtitle{
   text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 0.8rem;
-  color: #C5A059; /* Your Brand Gold */
-  margin-bottom: 10px;
+  letter-spacing: 5px;
+  font-size: 1rem;
 }
 
-.section-heading {
+.section-header h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
-  color: #1A1A1A;
+  letter-spacing: 2px;
 }
 
-.section-heading span {
-  font-weight: 400;
-  font-style: italic;
+.section-header span {
+  color: #C5A059; /* Brand Gold */
 }
 
-/* --- Services Grid --- */
+.gold-line {
+  width: 60px;
+  height: 2px;
+  background: #C5A059;
+  margin: 20px auto;
+}
+
+/* --- Interactive Service Cards --- */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .service-card {
+  background: rgba(255, 255, 255, 0.03); /* Subtle glass base */
   padding: 40px;
-  border: 1px solid #eeeeee;
+  border: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
-  transition: all 0.4s ease;
-  background: #fff;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+  backdrop-filter: blur(5px);
 }
-
-.service-id {
+.service-visual {
+  position: absolute;
+  bottom: 200px;
+  height: 100px;
+  width: 100px;
+  opacity: 1;     /* Very faint - strictly decorative */
+  transition: all 0.6s ease;
+  pointer-events: none;
+  scale: 0.2;
+  z-index: -2;
+}
+.service-card:hover .service-visual {
+  opacity: 0.18;
+  transform: scale(1.1) rotate(-4deg); 
+}
+.card-number {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
-  color: #C5A059;
-  display: block;
-  margin-bottom: 20px;
-  font-weight: 600;
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(197, 160, 89, 0.1); /* Very faint large gold number */
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all 0.5s ease;
 }
 
 .service-card h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-family: 'nunito', serif;
+  font-size: 1.4rem;
   margin-bottom: 15px;
-  color: #1a1a1a;
+  position: relative;
+  z-index: 2;
 }
 
 .service-card p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #666;
-  font-weight: 300;
+  color: #BBBBBB; 
+  font-size: 0.95rem; 
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300; 
 }
 
-.gold-bar {
+.card-border-bottom {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0%;
-  height: 4px;
-  background-color: #C5A059;
-  transition: width 0.4s ease;
+  width: 0%; 
+  height: 3px;
+  background: #C5A059;
+  transition: width 0.5s ease;
 }
 
-/* --- Hover State --- */
+/* --- Hover Effects (The "Boring" Killer) --- */
 .service-card:hover {
+  background: rgba(255, 255, 255, 0.07);
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-  border-color: #C5A059;
+  border-color: rgba(197, 160, 89, 0.3);
 }
 
-.service-card:hover .gold-bar {
-  width: 100%;
+.service-card:hover .card-number {
+  color: rgba(197, 160, 89, 0.3);
+  transform: scale(1.1);
 }
 
-/* Mobile Tweak */
+.service-card:hover .card-border-bottom {
+  width: 100%; /* Gold line slides out */
+}
+
 @media (max-width: 768px) {
-  .section-heading { font-size: 2rem; }
-  .service-card { padding: 30px; }
+  .services-grid {
+    display: flex !important; /* Switch from Grid to Flex for horizontal row */
+    overflow-x: auto;         /* Allow horizontal scrolling */
+
+    padding: 20px 0 40px 0;   /* Space for shadows/breathing room */
+    
+    /* Smooth Snapping Logic */
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; /* Smooth momentum on iPhone */
+    
+    /* Hide Scrollbar for a cleaner "App" look */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    gap: 10px;
+  }
+
+  .services-grid::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+  }
+
+  .service-card {
+    min-width: 65%; 
+    max-width: 65%;
+    scroll-snap-align: center; 
+    margin-bottom: 0;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  .services-section .container {
+     overflow: hidden; 
+  }
 }

@@ -16,7 +16,19 @@ const Contact = () => {
     });
 
     const data = await response.json();
-    setResult(data.success ? "Submitted Successfully" : "Error!");
+    if (data.success) {
+        setResult("Sent Successfully");
+        event.target.reset(); // Optional: Clears the input fields too
+
+        // --- The 7-Second Reset Logic ---
+        setTimeout(() => {
+            setResult("");
+        }, 12000); 
+        
+    } else {
+        setResult("Error!");
+        setTimeout(() => setResult(""), 5000);
+    }
   };
   return (
     <section className="contact-section" id="contact">
@@ -30,17 +42,14 @@ const Contact = () => {
         <div className="contact-form-wrapper">
           <form onSubmit={onSubmit} className="inquiry-form">
                 <div className="form-group">
-                <input type="text" placeholder="Your Name" required name='name'/>
+                <input type="text" placeholder="Your Name*" required name='name'/>
                 </div>
                 <div className="form-group">
-                <input type="text" placeholder="Your Phone number" required name='phone number'/>
-                </div>
-                <div className="form-group">
-                <input type="email" placeholder="Email Address" required name='email' />
+                <input type="text" placeholder="Your Phone number*" required name='phone number'/>
                 </div>
                 <div className="form-group">
                 <select required name='project-type'>
-                    <option value="">Project Type</option>
+                    <option value="">Project Type*</option>
                     <option value="residential">Residential</option>
                     <option value="commercial">Commercial Space</option>
                     <option value="interior">3D Modeling</option>
@@ -48,10 +57,15 @@ const Contact = () => {
                 </select>
                 </div>
                 <div className="form-group">
-                <textarea name='message' placeholder="Tell us about your vision..." rows="5"></textarea>
+                <textarea name='message' placeholder="Tell us about your vision (Optional)" rows="5"></textarea>
                 </div>
-                <button type="submit" className="cta-button-framing">Send Message</button>
-                <p>{result}</p>
+                <button 
+                  type="submit" 
+                  className={`cta-button ${result === "Sent Successfully" ? "btn-success" : "cta-solid"}`}
+                  disabled={result === "Sent Successfully"}
+                >
+                  {result === "Sent Successfully" ? "Sent Successfully" : "Send Message"}
+                </button>
           </form>
         </div>
 

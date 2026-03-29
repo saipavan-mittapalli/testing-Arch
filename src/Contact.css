@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
-/* --- Contact Section --- */
 .contact-section {
   padding: 100px 5%;
   background-color: #000000;
@@ -32,7 +31,6 @@
   font-weight: 500;
 }
 
-/* --- Layout Grid --- */
 .contact-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -42,11 +40,10 @@
   align-items: start;
 }
 
-/* --- Minimalist Form --- */
+
 .inquiry-form {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   gap: 20px;
 }
 
@@ -73,49 +70,68 @@ option{
 .form-group textarea:focus {
   border-bottom: 1px solid #C5A059;
 }
-.cta-button-framing {
+.cta-button {
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   padding: 1.2rem 3rem;
   background-color: #C5A059;
-  color: white; /* White text */
-  border: none; /* No border initially */
+  color: white;
+  border: none; 
   font-family: 'Montserrat', sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 3px;
   cursor: pointer;
-  transition: var(--transition-btn);
+  transition: background-color 0.5s ease, border-color 0.5s ease, transform 0.3s ease;
   z-index: 1;
 }
-.cta-button-framing::after {
+.cta-button::after {
   content: '';
   position: absolute;
-  inset: 0; /* Aligned perfectly with the button */
-  border: 1px solid var(--primary-gold); /* Thin frame */
+  inset: 0; 
+  border: 1px solid var(--primary-gold); 
   transition: var(--transition-btn);
-  z-index: -1; /* Behind the button */
-  opacity: 0; /* Initially hidden */
+  z-index: -1; 
+  opacity: 0; 
 }
 
-/* --- Hover State --- */
-.cta-button-framing:hover {
+.cta-button:hover {
   background-color: #A38245;
   transform: translate(2px, 2px); 
 }
 
-.cta-button-framing:hover::after {
+.cta-button:hover::after {
   opacity: 1; 
   inset: -8px; 
 }
 
-/* --- Map --- */
+.btn-success {
+  background-color: #28a745 !important; 
+  color: #FFFFFF !important;
+  border-color: #28a745 !important;
+  cursor: default;
+
+  transform: scale(1.02);
+  transition: all 0.4s ease;
+}
+
+.form-status {
+  margin-top: 15px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  color: #C5A059; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 .contact-map {
   height: 450px;
   border-radius: 5px;
 }
 
-/* --- Insta --- */
+
 .insta-footer {
   text-align: center;
   margin-top: 80px;
