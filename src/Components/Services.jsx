@@ -6,7 +6,7 @@ const Services = () => {
     id: '01', title: 'Site Consultation', 
     desc: 'Expert on-site checking to ensure your building is being constructed exactly as planned.',
     icon: <path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z" />,
-    img: './src/assets/imgs/1-consult.png'
+    img: './assets/imgs/1-consult.png'
   },
   { 
     id: '02', title: 'Space Planning', 
